@@ -20,13 +20,14 @@
   in {
     packages = forAllSystems (system: let
       pkgs = nixpkgsFor.${system};
+      basicPkgs = [pkgs.presenterm];
     in {
       default = pkgs.mkShell {
-        packages = [pkgs.slides];
+        packages = basicPkgs;
       };
 
       example = pkgs.mkShell {
-        packages = [pkgs.slides pkgs.go pkgs.graph-easy];
+        packages = basicPkgs ++ [pkgs.rustc];
       };
     });
   };
