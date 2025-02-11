@@ -97,4 +97,40 @@ git push; echo "Pushing has failed!"
 
 # ¿Qué es un archivo .sh?
 
-Nos permite 
+Puedes agrupar comandos en un archivo para automatizar acciones! Por ejemplo:
+
+```bash
+#!/bin/bash
+
+# Build `Rust` project 1
+cd Projecto1
+cargo build
+
+# Build `Go` project 2
+cd ../Projecto2
+go build
+```
+
+<!-- end_slide -->
+
+## ¿Por qué no puedo correr mi .sh?
+
+Si tienes un error en la forma de:
+```
+-bash: ./file.sh: Permission denied
+```
+<!-- pause -->
+
+Recuerda la sección de permisos! Puedes aplicarlos de la siguiente forma:
+```bash
+chmod +x file.sh
+```
+<!-- end_slide -->
+
+# Atajos de teclado importantes
+
+* \<UP ARROW\>: Comando anterior en el historial.
+* \<DOWN ARROW\>: Comando posterior en el historial.
+* \<CTRL\>+l: Limpia la pantalla.
+* \<CTRL\>+c: Terminar la ejecución del programa actual.
+* \<CTRL\>+r: Buscar dentro del historial de comandos.
