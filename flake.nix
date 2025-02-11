@@ -24,6 +24,10 @@
       default = pkgs.mkShell {
         packages = [pkgs.slides];
       };
+
+      example = pkgs.mkShell {
+        packages = [pkgs.slides pkgs.go pkgs.graph-easy];
+      };
     });
   };
 }
