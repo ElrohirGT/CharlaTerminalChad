@@ -112,6 +112,45 @@ go build
 ```
 
 <!-- end_slide -->
+## ¿Qué es el shebang?
+
+El shebang es lo que le dice a bash qué debe ejecutar! `/bin/bash` es simplemente un intérprete. Realmente podría ser también `/bin/nodejs`:
+
+<!-- column_layout: [1,1] -->
+<!-- column: 0 -->
+`.sh` script en javascript
+```bash
+#!/usr/bin/env node
+
+console.log("Hello from JS!")
+```
+
+<!-- column: 1 -->
+`.sh` script en python
+```bash
+#!/usr/bin/env python3
+
+print("Hello from python!")
+```
+
+<!-- reset_layout -->
+
+<!-- end_slide -->
+## Ejecutando mi script
+Para ejecutar el script simplemente escribe la dirección al archivo:
+```bash
+./file.sh
+
+# Cuidado con usar rutas relativas!
+./scripts/example1.sh
+```
+
+<!-- pause -->
+
+Los scripts se ejecutan en tu directorio actual así que cuidado con crear archivos o realizar comandos en directorios donde no deberías!
+
+<!-- end_slide -->
+
 
 ## ¿Por qué no puedo correr mi .sh?
 

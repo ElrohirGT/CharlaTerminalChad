@@ -27,7 +27,7 @@
       };
 
       example = pkgs.mkShell {
-        packages = basicPkgs ++ [pkgs.rustc];
+        packages = basicPkgs ++ [pkgs.rustc pkgs.nodejs];
       };
     });
   };
