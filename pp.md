@@ -25,3 +25,76 @@ echo "Hello World!"
 echo "Hello" \
     "World!"
 ```
+<!-- reset_layout -->
+
+
+<!-- end_slide -->
+
+# ¿Qué es un alias?
+
+A veces algunos comandos los ejecutamos demasiado seguido...
+
+```bash
+# Obtener el status actual del repo
+git status
+# Obtener el status actual del repo
+ls -la
+```
+
+Podemos crear un alias para escribir menos proceso, por ejemplo:
+```bash {1|2|3} +line_numbers
+alias gs="git status"
+alias ll="ls -la"
+alias myip='curl ipinfo.io/ip'
+```
+
+<!-- end_slide -->
+
+## ¿Cómo hago mis alias permanentes?
+
+Si usamos este comando por sí mismo la próxima vez que utilizemos la terminal tendremos que volver a escribirlo.
+
+Las opciones son:
+
+* `~/.bashrc`: Configuración del usuario.
+* `~/bash_profile`: Configuración del usuario al momento de iniciar sesión.
+* `/etc/bashrc`: Configuración del sistema en general.
+* `/etc/profile`: Configuración del `root` al momento de iniciar sesión.
+
+```bash
+# Dentro del ~/.bashrc
+alias gs="git status"
+alias ll="ls -la"
+alias myip='curl ipinfo.io/ip'
+```
+
+<!-- end_slide -->
+
+# Composición de comandos
+
+Para correr un comando solamente si el anterior es satisfactorio:
+<!-- pause -->
+
+```bash
+git push && exit
+```
+<!-- pause -->
+
+Ejecutar un comando solamente si anterior falla:
+<!-- pause -->
+```bash
+git push || echo "Pushing has failed!"
+```
+<!-- pause -->
+
+Ejecutar un comando cuando termine el anterior (independientemente del estatus):
+<!-- pause -->
+```bash
+git push; echo "Pushing has failed!"
+```
+
+<!-- end_slide -->
+
+# ¿Qué es un archivo .sh?
+
+Nos permite 
