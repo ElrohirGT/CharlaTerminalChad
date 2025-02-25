@@ -29,6 +29,14 @@
       example = pkgs.mkShell {
         packages = basicPkgs ++ [pkgs.rustc pkgs.nodejs];
       };
+
+      present = pkgs.writeShellApplication {
+        name = "PP";
+        runtimeInputs = basicPkgs;
+        text = ''
+          presenterm -x ./pp.md
+        '';
+      };
     });
   };
 }
