@@ -41,7 +41,7 @@ git status
 ls -la
 ```
 
-Podemos crear un alias para escribir menos proceso, por ejemplo:
+Podemos crear un alias para escribir menos por comando, por ejemplo:
 ```bash {1|2|3} +line_numbers
 alias gs="git status"
 alias ll="ls -la"
