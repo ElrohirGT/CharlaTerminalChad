@@ -22,20 +22,25 @@
       pkgs = nixpkgsFor.${system};
       basicPkgs = [pkgs.presenterm];
     in {
-      default = pkgs.mkShell {
-        packages = basicPkgs;
-      };
-
       example = pkgs.mkShell {
         packages = basicPkgs ++ [pkgs.rustc pkgs.nodejs];
       };
 
-      present = pkgs.writeShellApplication {
+      default = pkgs.writeShellApplication {
         name = "PP";
         runtimeInputs = basicPkgs;
         text = ''
           presenterm -x ./pp.md
         '';
+      };
+    });
+
+    devShells = forAllSystems (system: let
+      pkgs = nixpkgsFor.${system};
+      basicPkgs = [pkgs.presenterm];
+    in {
+      default = pkgs.mkShell {
+        packages = basicPkgs;
       };
     });
   };
