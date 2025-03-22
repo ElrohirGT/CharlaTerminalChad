@@ -102,6 +102,8 @@ Puedes agrupar comandos en un archivo para automatizar acciones! Por ejemplo:
 ```bash
 #!/bin/bash
 
+set -euxo pipefail
+
 # Build `Rust` project 1
 cd Projecto1
 cargo build
@@ -110,6 +112,24 @@ cargo build
 cd ../Projecto2
 go build
 ```
+
+<!-- end_slide -->
+## ¿Qué fue el comando set anterior?
+
+Es una abreviatura de:
+```bash
+# set -euxo pipefail
+
+set -e
+set -u
+set -o pipefail
+set -x
+```
+
+* -e: Termina la ejecución inmediatamente si algún comando tiene un estado de salida distinto de 0.
+* -u: Cualquier referencia a una variable no definida es un error.
+* -x: Todos los comandos ejecutados se imprimen en la terminal.
+* -o pipefail: Si algún comando en una tubería falla, toda la tubería fallará.
 
 <!-- end_slide -->
 ## ¿Qué es el shebang?
